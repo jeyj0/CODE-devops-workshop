@@ -3,7 +3,7 @@ from calculator.logic import Calculator
 
 
 class CalculatorTests(TestCase):
-    def test_mul(self):
+    def test_mul_with_5_and_10(self):
         calculator = Calculator()
         assert calculator.mul(5, 10) == 50
 
