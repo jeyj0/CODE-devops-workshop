@@ -19,10 +19,25 @@ class CalculatorTests(TestCase):
         calculator = Calculator()
         assert calculator.mul(6, -3) == -18
 
-    def test_mul_raises_ValueError(self):
+    def test_mul_raises_ValueError_if_a_too_high(self):
         calculator = Calculator()
         with pytest.raises(ValueError):
             calculator.mul(1001, 2)
+
+    def test_mul_raises_ValueError_if_a_too_low(self):
+        calculator = Calculator()
+        with pytest.raises(ValueError):
+            calculator.mul(-1001, 2)
+
+    def test_mul_raises_ValueError_if_b_too_high(self):
+        calculator = Calculator()
+        with pytest.raises(ValueError):
+            calculator.mul(2, 1001)
+
+    def test_mul_raises_ValueError_if_b_too_low(self):
+        calculator = Calculator()
+        with pytest.raises(ValueError):
+            calculator.mul(2, -1001)
 
     def test_div(self):
         pass
