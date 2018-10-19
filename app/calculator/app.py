@@ -10,16 +10,22 @@ app = Flask(__name__)
 def multiply(a, b):
     c = Calculator()
 
-    result = c.mul(int(a), int(b))
-    return str(result)
+    try:
+        result = c.mul(int(a), int(b))
+        return str(result)
+    except Exception as e:
+        return e.message, 403
 
 
 @app.route("/calc/<a>/<b>")
 def divide(a, b):
     c = Calculator()
 
-    result = c.div(int(a), int(b))
-    return str(result)
+    try:
+        result = c.div(int(a), int(b))
+        return str(result)
+    except Exception as e:
+        return e.message, 403
 
 
 @app.route("/")

@@ -17,7 +17,7 @@ class Calculator(object):
     def checkValueValidities(self, a, b):
         if (a > self.max_value or a < self.min_value 
             or b > self.max_value or b < self.min_value):
-            raise ValueError
+            raise ValueError("Too big or too small value passed.")
 
     def mul(self, a, b):
         self.checkValueValidities(a, b)
