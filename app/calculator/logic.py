@@ -14,11 +14,15 @@ class Calculator(object):
         self.min_value = min_value
         self.max_value = max_value
 
-    def mul(self, a, b):
+    def checkValueValidities(self, a, b):
         if (a > self.max_value or a < self.min_value 
             or b > self.max_value or b < self.min_value):
             raise ValueError
+
+    def mul(self, a, b):
+        self.checkValueValidities(a, b)
         return a * b
 
     def div(self, a, b):
-        pass
+        self.checkValueValidities(a, b)
+        return a / b
