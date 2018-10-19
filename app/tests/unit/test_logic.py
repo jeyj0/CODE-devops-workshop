@@ -1,6 +1,6 @@
 from unittest import TestCase
 from calculator.logic import Calculator
-
+import pytest
 
 class CalculatorTests(TestCase):
     def test_mul_with_5_and_10(self):
@@ -18,6 +18,11 @@ class CalculatorTests(TestCase):
     def test_mul_with_one_positive_and_one_negative_number(self):
         calculator = Calculator()
         assert calculator.mul(6, -3) == -18
+
+    def test_mul_raises_ValueError(self):
+        calculator = Calculator()
+        with pytest.raises(ValueError):
+            calculator.mul(1001, 2)
 
     def test_div(self):
         pass
